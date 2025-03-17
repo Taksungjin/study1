@@ -18,23 +18,23 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
-public class ApiController {
+public class ReadController {
 	
 	
 	private final ProfileService profileService;
 	private final BoardService boardService;
 	
-	public ApiController(ProfileService profileService, BoardService boardService) {
+	public ReadController(ProfileService profileService, BoardService boardService) {
 		this.profileService = profileService;
 		this.boardService = boardService;
 	}
 	
-	@GetMapping("/my1")
-	@ResponseBody
-	public String test() {
-		log.info("통과");
-		return "로그인됨";
-	}
+//	@GetMapping("/my1")
+//	@ResponseBody
+//	public String test() {
+//		log.info("통과");
+//		return "로그인됨";
+//	}
 
 	@GetMapping("/api/board")
 	public List<?> board() {

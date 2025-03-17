@@ -15,7 +15,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.util.StreamUtils;
 
-import com.example.demo.dao.JoinDAO;
+import com.example.demo.dao.WriteDAO;
 import com.example.demo.dto.CustomUserDetails;
 import com.example.demo.dto.RefreshDTO;
 import com.example.demo.dto.UserInfoVO;
@@ -32,10 +32,10 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter{
 	
 	private final AuthenticationManager authenticationManager;
 	private final JWTUtil jwtUtil;
-	private final JoinDAO joinDAO;
+	private final WriteDAO joinDAO;
 	
 	//생성자주입
-	public LoginFilter(AuthenticationManager authenticationManager, JWTUtil jwtUtil, JoinDAO joinDAO) {
+	public LoginFilter(AuthenticationManager authenticationManager, JWTUtil jwtUtil, WriteDAO joinDAO) {
 		this.authenticationManager = authenticationManager;
 		this.jwtUtil = jwtUtil;
 		this.joinDAO = joinDAO;

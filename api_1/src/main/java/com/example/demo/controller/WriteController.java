@@ -22,7 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
-public class JoinController {
+public class WriteController {
 	
 	@Autowired
 	private JoinService joinService;
@@ -33,7 +33,6 @@ public class JoinController {
 	@PostMapping("/signup")
 	public ResponseEntity<?> joinCtl(@RequestBody SignUpRequestDTO req) {
 		
-//		joinService.join(req);
 		log.info("회원정보 데이터 : " + req);
 		return joinService.join(req);
 	}

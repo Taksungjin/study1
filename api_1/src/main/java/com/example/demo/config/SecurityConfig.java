@@ -19,8 +19,8 @@ import org.springframework.security.web.authentication.logout.LogoutFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 
-import com.example.demo.dao.ApiDAO;
-import com.example.demo.dao.JoinDAO;
+import com.example.demo.dao.ReadDAO;
+import com.example.demo.dao.WriteDAO;
 import com.example.demo.jwt.CustomLogoutFilter;
 import com.example.demo.jwt.JWTFilter;
 import com.example.demo.jwt.JWTUtil;
@@ -39,12 +39,12 @@ public class SecurityConfig {
 	private final CustomOAuth2UserService customOAuth2UserService;
 	private final CustomSuccessHandler customSuccessHandler;
 	private final JWTUtil jwtUtil;
-	private final JoinDAO joinDao;
-	private final ApiDAO apiDAO;
+	private final WriteDAO joinDao;
+	private final ReadDAO apiDAO;
 	
 	
 	//생성자주입
-	public SecurityConfig(AuthenticationConfiguration authenticationConfiguration, JWTUtil jwtUtil, CustomOAuth2UserService customOAuth2UserService, CustomSuccessHandler customSuccessHandler, JoinDAO joinDao, ApiDAO apiDAO) {
+	public SecurityConfig(AuthenticationConfiguration authenticationConfiguration, JWTUtil jwtUtil, CustomOAuth2UserService customOAuth2UserService, CustomSuccessHandler customSuccessHandler, WriteDAO joinDao, ReadDAO apiDAO) {
 		this.authenticationConfiguration = authenticationConfiguration;
 		this.jwtUtil = jwtUtil;
 		this.customOAuth2UserService = customOAuth2UserService;
@@ -76,7 +76,7 @@ public class SecurityConfig {
 				
 				CorsConfiguration configuration = new CorsConfiguration();
 				
-				configuration.setAllowedOrigins(Collections.singletonList("http://localhost:3000"));
+				configuration.setAllowedOrigins(Collections.singletonList("http://3.39.154.169"));
 				configuration.setAllowedMethods(Collections.singletonList("*"));
 				configuration.setAllowCredentials(true);
 				configuration.setAllowedHeaders(Collections.singletonList("*"));

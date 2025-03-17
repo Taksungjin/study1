@@ -33,14 +33,16 @@ public class SmsService {
 	 public String sendSms(String to) {
 		 Message message = new Message();
 	        // 발신번호 및 수신번호는 반드시 01012345678 형태로 입력되어야 합니다.
+		 	String authNum = generateRandomNumber();
+		 	
 	        message.setFrom(fromNumber);
 	        message.setTo(to);
-	        message.setText("인증코드는 " + generateRandomNumber() + "입니다");
+	        message.setText("인증코드는 " + authNum + "입니다");
 
 	        SingleMessageSentResponse response = this.messageService.sendOne(new SingleMessageSendingRequest(message));
-	        
+	        System.out.println(response);
 	        if(response.getStatusCode().equals("2000")) {
-	        	return generateRandomNumber();
+	        	return authNum;
 	        } else {
 	        	return "인증번호 발송 오류";
 	        }

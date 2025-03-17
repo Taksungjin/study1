@@ -6,8 +6,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.demo.dao.ApiDAO;
-import com.example.demo.dao.JoinDAO;
+import com.example.demo.dao.ReadDAO;
+import com.example.demo.dao.WriteDAO;
 import com.example.demo.dto.SignUpRequestDTO;
 import com.example.demo.dto.UserInfoVO;
 
@@ -19,13 +19,13 @@ import lombok.extern.slf4j.Slf4j;
 public class JoinService {
 	
 	@Autowired 
-	private JoinDAO joinDAO;
+	private WriteDAO joinDAO;
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	
 	@Autowired
-	private ApiDAO apiDAO;
+	private ReadDAO apiDAO;
 	
 	public ResponseEntity<?> join(SignUpRequestDTO req) {
 		

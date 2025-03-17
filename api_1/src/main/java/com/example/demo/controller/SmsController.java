@@ -23,6 +23,6 @@ public class SmsController {
 		String phone = req.get("phone").toString();
 		
 		
-		return "1234";//smsService.sendSms(phone);
+		return smsService.sendSms(phone);
 	}
 }

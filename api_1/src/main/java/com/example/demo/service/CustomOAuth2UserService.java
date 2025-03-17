@@ -7,8 +7,8 @@ import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.dao.ApiDAO;
-import com.example.demo.dao.JoinDAO;
+import com.example.demo.dao.ReadDAO;
+import com.example.demo.dao.WriteDAO;
 import com.example.demo.dto.CustomOAuth2User;
 import com.example.demo.dto.GoogleResponse;
 import com.example.demo.dto.NaverResponse;
@@ -20,10 +20,10 @@ import com.example.demo.dto.UserInfoVO;
 public class CustomOAuth2UserService extends DefaultOAuth2UserService{
 	
 	@Autowired
-	private ApiDAO apiDao;
+	private ReadDAO apiDao;
 	
 	@Autowired
-	private JoinDAO joinDAO;
+	private WriteDAO joinDAO;
 	
 	 @Override
 	    public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {

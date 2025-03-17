@@ -12,7 +12,7 @@ import com.example.demo.dto.UserInfoVO;
 
 @Mapper
 @Repository
-public interface ApiDAO {
+public interface ReadDAO {
 	
 	public UserInfoVO selectId(String req);
 	

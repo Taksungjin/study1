@@ -4,8 +4,8 @@ import java.io.IOException;
 
 import org.springframework.web.filter.GenericFilterBean;
 
-import com.example.demo.dao.ApiDAO;
-import com.example.demo.dao.JoinDAO;
+import com.example.demo.dao.ReadDAO;
+import com.example.demo.dao.WriteDAO;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
@@ -19,10 +19,10 @@ import jakarta.servlet.http.HttpServletResponse;
 public class CustomLogoutFilter extends GenericFilterBean{
 	
 	private final JWTUtil jwtUtil;
-	private final ApiDAO refreshExists;
-	private final JoinDAO refreshDao;
+	private final ReadDAO refreshExists;
+	private final WriteDAO refreshDao;
 	
-	public CustomLogoutFilter(JWTUtil jwtUtil, ApiDAO refreshExists, JoinDAO refreshDao) {
+	public CustomLogoutFilter(JWTUtil jwtUtil, ReadDAO refreshExists, WriteDAO refreshDao) {
 		this.jwtUtil = jwtUtil;
 		this.refreshExists = refreshExists;
 		this.refreshDao = refreshDao;

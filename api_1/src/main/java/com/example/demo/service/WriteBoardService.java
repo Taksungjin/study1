@@ -6,8 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.dao.ApiDAO;
-import com.example.demo.dao.JoinDAO;
+import com.example.demo.dao.ReadDAO;
+import com.example.demo.dao.WriteDAO;
 import com.example.demo.dto.BoardDTO;
 
 import lombok.extern.slf4j.Slf4j;
@@ -16,10 +16,10 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class WriteBoardService {
 	
-	private final JoinDAO writeBoard;
-	private final ApiDAO readBoard;
+	private final WriteDAO writeBoard;
+	private final ReadDAO readBoard;
 	
-	public WriteBoardService(JoinDAO writeBoard, ApiDAO readBoard) {
+	public WriteBoardService(WriteDAO writeBoard, ReadDAO readBoard) {
 		this.writeBoard = writeBoard;
 		this.readBoard = readBoard;
 	}

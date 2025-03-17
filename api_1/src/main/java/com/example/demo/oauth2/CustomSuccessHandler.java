@@ -10,7 +10,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
-import com.example.demo.dao.JoinDAO;
+import com.example.demo.dao.WriteDAO;
 import com.example.demo.dto.CustomOAuth2User;
 import com.example.demo.dto.RefreshDTO;
 import com.example.demo.jwt.JWTUtil;
@@ -24,9 +24,9 @@ import jakarta.servlet.http.HttpServletResponse;
 public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
     private final JWTUtil jwtUtil;
-    private final JoinDAO joinDAO;
+    private final WriteDAO joinDAO;
 
-    public CustomSuccessHandler(JWTUtil jwtUtil, JoinDAO joinDAO) {
+    public CustomSuccessHandler(JWTUtil jwtUtil, WriteDAO joinDAO) {
 
         this.jwtUtil = jwtUtil;
         this.joinDAO = joinDAO;
@@ -53,7 +53,7 @@ public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
 		addRefreshEntity(username, refresh, 86400000L);
 		
         response.addCookie(createCookie("refresh", refresh));
-        response.sendRedirect("http://localhost:3000/test");
+        response.sendRedirect("http://3.39.154.169/reissue");
     }
 
     private Cookie createCookie(String key, String value) {

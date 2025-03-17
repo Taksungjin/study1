@@ -10,7 +10,7 @@ import com.example.demo.dto.UserInfoVO;
 
 @Mapper
 @Repository
-public interface JoinDAO {
+public interface WriteDAO {
 	
 	int userInsert(SignUpRequestDTO req);
 	

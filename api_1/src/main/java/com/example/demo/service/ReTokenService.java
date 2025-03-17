@@ -7,8 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.common.CreateCookie;
-import com.example.demo.dao.ApiDAO;
-import com.example.demo.dao.JoinDAO;
+import com.example.demo.dao.ReadDAO;
+import com.example.demo.dao.WriteDAO;
 import com.example.demo.dto.RefreshDTO;
 import com.example.demo.jwt.JWTUtil;
 
@@ -21,10 +21,10 @@ import jakarta.servlet.http.HttpServletResponse;
 public class ReTokenService {
 
 	private final JWTUtil jwtUtil;
-	private ApiDAO refreshDao;
-	private JoinDAO refreshToken;
+	private ReadDAO refreshDao;
+	private WriteDAO refreshToken;
 
-    public ReTokenService(JWTUtil jwtUtil, ApiDAO refreshDao, JoinDAO refreshToken) {
+    public ReTokenService(JWTUtil jwtUtil, ReadDAO refreshDao, WriteDAO refreshToken) {
 
         this.jwtUtil = jwtUtil;
         this.refreshDao = refreshDao;

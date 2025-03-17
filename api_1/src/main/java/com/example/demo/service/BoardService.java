@@ -6,15 +6,15 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import com.example.demo.dao.ApiDAO;
+import com.example.demo.dao.ReadDAO;
 import com.example.demo.dto.BoardDTO;
 
 @Service
 public class BoardService {
 	
-	private final ApiDAO boardRepository;
+	private final ReadDAO boardRepository;
 	
-	public BoardService(ApiDAO boardRepository) {
+	public BoardService(ReadDAO boardRepository) {
 		this.boardRepository = boardRepository;
 	}
 	

@@ -4,7 +4,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import com.example.demo.dao.ApiDAO;
+import com.example.demo.dao.ReadDAO;
 import com.example.demo.dto.UserInfoVO;
 import com.example.demo.jwt.JWTUtil;
 
@@ -15,10 +15,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ProfileService {
 	
-	private final ApiDAO profileData;
+	private final ReadDAO profileData;
 	private final JWTUtil jwtUtil;
 	
-	public ProfileService(ApiDAO profileData, JWTUtil jwtUtil) {
+	public ProfileService(ReadDAO profileData, JWTUtil jwtUtil) {
 		this.profileData = profileData;
 		this.jwtUtil = jwtUtil;
 	}
